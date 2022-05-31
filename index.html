@@ -1,26 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<title>Calculator app</title>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Calculator app</title>
+	<style>
+		.attribution { font-size: 11px; text-align: center; }
+		.attribution a { color: hsl(228, 45%, 44%); }
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+		.slidecontainer {
+		  width: 15%;
+		}
+		
+		.slider {
+		  -webkit-appearance: none;
+		  width: 100%;
+		  height: 30px;
+		  border-radius: 20px;
+		  background: #d3d3d3;
+		  outline: none;
+		  opacity: 0.7;
+		  -webkit-transition: .2s;
+		  transition: opacity .2s;
+		}
+		
+		.slider:hover {
+		  opacity: 1;
+		}
+		
+		.slider::-webkit-slider-thumb {
+		  -webkit-appearance: none;
+		  appearance: none;
+		  width: 20px;
+		  height: 20px;
+		  border-radius: 50%;
+		  background: #04AA6D;
+		  cursor: pointer;
+		}
+		
+		.slider::-moz-range-thumb {
+		  width: 20px;
+		  height: 2px;
+		  border-radius: 50%;
+		  background: #04AA6D;
+		  cursor: pointer;
+		}
+	</style>
 </head>
 <body>
+	<div class="top-container">
+		<div>
+			<h1>Calc</h1>
+		</div>
+		<div class="slidecontainer">
+			<input type="range" min="0" max="2" value="1" class="slider" id="myRange">
+	</div>
+	</div>
 
+	<div class="result-box">
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+	</div>
+
+	<div class="input-box">
+		<div class="button-grid">
+			<div class="button-box">
+				<button class="gen-button button" id="btnSeven" type="submit">7</button>
+			</div>
+			<div class="button-box">
+				<button class="gen-button button" id="btnEight" type="submit">8</button>
+			</div>
+			<div class="button-box">
+				<button class="gen-button button" id="btnNine" type="submit">9</button>
+			</div>
+			<div class="button-box">
+				<button class="delete-button diff-button button" id="btnDel" type="submit">DEL</button>
+			</div>
+			<div class="button-box">
+				<button class="gen-button button" id="btnFour" type="submit">4</button>
+			</div>
+			<div class="button-box">
+				<button class="gen-button button" id="btnFive" type="submit">5</button>
+			</div>
+			<div class="button-box">
+				<button class="gen-button button" id="btnSix" type="submit">6</button>
+			</div>
+			<div class="button-box">
+				<button class="gen-button button" id="btnPlus" type="submit">+</button>
+			</div>
+			<div class="button-box">
+				<button class="gen-button button" id="btnOne" type="submit">1</button>
+			</div>
+			<div class="button-box">
+				<button class="gen-button button" id="btnTwo" type="submit">2</button>
+			</div>
+			<div class="button-box">
+				<button class="gen-button button" id="btnThree" type="submit">3</button>
+			</div>
+			<div class="button-box">
+				<button class="gen-button button" id="btnMinus" type="submit">-</button>
+			</div>
+			<div class="button-box">
+				<button class="gen-button button" id="btnDecimal" type="submit">.</button>
+			</div>
+			<div class="button-box">
+				<button class="gen-button button" id="btnZero" type="submit">0</button>
+			</div>
+			<div class="button-box">
+				<button class="gen-button button" id="btnDivide" type="submit">/</button>
+			</div>
+			<div class="button-box">
+				<button class="gen-button button" id="btnMultiply" type="submit">x</button>
+			</div>
+			<div class="button-box">
+				<button class="reset-button diff-button button" id="btnReset" type="submit">RESET</button>
+			</div>
+			<div class="button-box">
+				<button class="equal-button button" id="btnEqual" type="submit">=</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="attribution">
+		Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+		Coded by <a href="#">Iyanda Israel</a>.
+	</div>
 </body>
 </html>
