@@ -1,0 +1,3 @@
+- Display value of whatever button is clicked
+- Whenever an operation is clicked it remains active until another button is clicked
+- When a value is more than 10 figures return the exponent
