@@ -1,4 +1,0 @@
-- Display value of whatever button is clicked
-- Whenever an operation is clicked it remains active until another button is clicked
-- When a value is more than 10 figures return the exponen
--Create a multi-stage slider for changing calculator styles
