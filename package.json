@@ -1,0 +1,19 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "Calculator App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Israeltheminer/Calculator.git"
+  },
+  "author": "Iyanda Israel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Israeltheminer/Calculator/issues"
+  },
+  "homepage": "https://github.com/Israeltheminer/Calculator#readme"
+}
