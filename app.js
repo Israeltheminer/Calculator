@@ -14,9 +14,9 @@ app.use('/dist', express.static(DIST))
 
 
 app.get('/', (req, res) => {
-  res.sendFile(homePage)
+	res.sendFile(homePage)
 })
 
 app.listen(port, ()=>{
-   console.log(`CORS-enabled web server listening on port ${port}`)
+	console.log(`CORS-enabled web server listening on port ${port}`)
 })
