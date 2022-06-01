@@ -26,7 +26,7 @@ jspm_packages/
 # Optional eslint cache
 .eslintcache
 
-
+# Dist files that recomplied on every save
 dist/scripts
 dist/styles
 
@@ -42,4 +42,5 @@ dist/styles
 .vscode-test
 *.txt
 
-
+# Designing files
+design
