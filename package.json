@@ -4,7 +4,10 @@
   "description": "Calculator App",
   "main": "app.js",
   "scripts": {
-    "postcss:watch": "postcss src/styles/style.css -d dist/styles/ --watch",
+    "postcss:general:watch": "postcss src/styles/general.css -d dist/styles/ --watch",
+    "postcss:one:watch": "postcss src/styles/style-one.css -d dist/styles/ --watch",
+    "postcss:two:watch": "postcss src/styles/style-two.css -d dist/styles/ --watch",
+    "postcss:three:watch": "postcss src/styles/style-three.css -d dist/styles/ --watch",
     "webpack:build": "webpack --mode=production",
     "webpack": "webpack --mode=development",
     "webpack:dev": "webpack --mode=development --watch"
