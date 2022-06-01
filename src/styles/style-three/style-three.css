@@ -1,0 +1,40 @@
+body{
+   color: hsl(52, 100%, 62%);
+	background-color: hsl(268, 75%, 9%);
+}
+
+.slider {
+	background: hsl(268, 71%, 12%);
+}
+ 
+.slider::-webkit-slider-thumb {
+	background: hsl(176, 100%, 44%);
+}
+ 
+.slider::-moz-range-thumb {
+	background: hsl(176, 100%, 44%);
+}
+
+.result-box{
+	background-color: hsl(268, 71%, 12%);
+}
+
+.input-box{
+	background-color: hsl(268, 71%, 12%);
+}
+
+.gen-button{
+	background-color: hsl(268, 47%, 21%);
+	box-shadow: 0 3px hsl(285, 91%, 52%);
+}
+
+.dark-button{
+	background-color: hsl(281, 89%, 26%);
+	box-shadow: 0 3px hsl(285, 91%, 52%);
+}
+
+.equal-button{
+	background-color: hsl(176, 100%, 44%);
+	box-shadow: 0 3px hsl(177, 92%, 70%);
+   color: rgba(0, 0, 0, 0.806);
+}
