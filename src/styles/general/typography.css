@@ -1,0 +1,26 @@
+h1{
+   font-size: 28px;
+   font-weight: 600;
+}
+
+span{
+   font-size: 12px;
+}
+
+p{
+   font-size: 12px;
+}
+
+.gen-button{
+   font-size:  32px;
+   width: 100%;
+}
+
+button{
+   height: 60px;
+}
+
+.diff-button{
+   font-size:  20px;
+   width: 100%;
+}
