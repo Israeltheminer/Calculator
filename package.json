@@ -15,5 +15,24 @@
   "bugs": {
     "url": "https://github.com/Israeltheminer/Calculator/issues"
   },
-  "homepage": "https://github.com/Israeltheminer/Calculator#readme"
+  "homepage": "https://github.com/Israeltheminer/Calculator#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "cssnano": "^5.1.10",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^9.1.0",
+    "postcss-import": "^14.1.0",
+    "postcss-import-ext-glob": "^2.0.1",
+    "postcss-nesting": "^10.1.7",
+    "postcss-preset-env": "^7.7.0",
+    "tailwindcss": "^3.0.24",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "jquery": "^3.6.0"
+  }
 }
