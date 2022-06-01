@@ -10,26 +10,36 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300...500&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="dist/styles/style.css">
+	<link rel="stylesheet" href="dist/styles/general.css">
+	<link id="currentStyle" rel="stylesheet" href="dist/styles/style-three.css">
 	<title>calc</title>
 </head>
 <body>
 	<div class="calculator-container">
 		<div class="top-container">
 			<div>
-				<h1>calc</h1>
+				<h1 class="inline">calc</h1>
 			</div>
-			<div class="slidecontainer">
-				<input type="range" min="0" max="2" value="1" class="slider" id="myRange">
-		</div>
+			<div>
+				<div class="style-value">
+					<span>1</span>
+					<span>2</span>
+					<span>3</span>
+				</div>
+				<div class="slidecontainer">
+					<input type="range" min="0" max="2" value="1" class="slider" id="myRange">
+				</div>
+			</div>
 		</div>
 	
 		<div class="result-box">
-	
+			<p class="result-paragraph text-[3.5rem] m-auto p-[0]">
+				&nbsp;
+			</p>
 		</div>
 	
 		<div class="input-box">
-			<div class="button-grid">
+			<div class="keypad-grid">
 				<div class="button-box">
 					<button class="gen-button button" id="btnSeven" type="submit">7</button>
 				</div>
@@ -40,7 +50,7 @@
 					<button class="gen-button button" id="btnNine" type="submit">9</button>
 				</div>
 				<div class="button-box">
-					<button class="delete-button diff-button button" id="btnDel" type="submit">DEL</button>
+					<button class="delete-button dark-button diff-button button" id="btnDel" type="submit">DEL</button>
 				</div>
 				<div class="button-box">
 					<button class="gen-button button" id="btnFour" type="submit">4</button>
@@ -79,10 +89,10 @@
 					<button class="gen-button button" id="btnMultiply" type="submit">x</button>
 				</div>
 				<div class="button-box">
-					<button class="reset-button diff-button button" id="btnReset" type="submit">RESET</button>
+					<button class="reset-button dark-button diff-button button" id="btnReset" type="submit">RESET</button>
 				</div>
 				<div class="button-box">
-					<button class="equal-button button" id="btnEqual" type="submit">=</button>
+					<button class="equal-button diff-button button" id="btnEqual" type="submit">=</button>
 				</div>
 			</div>
 		</div>

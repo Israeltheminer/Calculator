@@ -1,0 +1,43 @@
+body{
+   color: hsl(60, 10%, 19%);
+	background-color: hsl(0, 0%, 90%);
+}
+
+.slider {
+	background: hsl(0, 5%, 81%);
+}
+ 
+.slider::-webkit-slider-thumb {
+	background: hsl(25, 98%, 40%);
+}
+ 
+.slider::-moz-range-thumb {
+	background: hsl(25, 98%, 40%);
+}
+
+.result-box{
+	background-color: hsl(0, 0%, 93%);
+}
+
+.input-box{
+	background-color: hsl(0, 5%, 81%);
+}
+
+.gen-button{
+	background-color: hsl(45, 7%, 89%);
+	box-shadow: 0 3px hsl(35, 11%, 61%);
+}
+
+.diff{
+   color: #ffffff;
+}
+
+.dark-button{
+	background-color: hsl(185, 42%, 37%);
+	box-shadow: 0 3px hsl(185, 58%, 25%);
+}
+
+.equal-button{
+	background-color: hsl(25, 98%, 40%);
+	box-shadow: 0 3px hsl(25, 99%, 27%);
+}
