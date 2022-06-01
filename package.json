@@ -4,7 +4,10 @@
   "description": "Calculator App",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postcss:watch": "postcss src/styles/style.css -d dist/styles/ --watch",
+    "webpack:build": "webpack --mode=production",
+    "webpack": "webpack --mode=development",
+    "webpack:dev": "webpack --mode=development --watch"
   },
   "repository": {
     "type": "git",
