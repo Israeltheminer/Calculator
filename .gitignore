@@ -27,8 +27,8 @@ jspm_packages/
 .eslintcache
 
 # Dist files that recomplied on every save
-dist/scripts
-dist/styles
+dist/scripts/
+dist/styles/
 
 
 # dotenv environment variable files
