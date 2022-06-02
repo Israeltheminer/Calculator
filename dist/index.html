@@ -9,84 +9,88 @@
 	<link rel="manifest" href="dist/assets/favicon/site.webmanifest">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300...500&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="dist/styles/general.css">
-	<link id="currentStyle" rel="stylesheet" href="dist/styles/style-three.css">
+	<link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css"  href="dist/styles/general.css">
 	<title>calc</title>
 </head>
 <body>
+	<link id="currentStyle" rel="stylesheet" type="text/css" href="dist/styles/style-one.css">
 	<div class="calculator-container">
 		<div class="top-container">
 			<div>
 				<h1 class="inline">calc</h1>
 			</div>
-			<div>
-				<div class="style-value">
-					<span>1</span>
-					<span>2</span>
-					<span>3</span>
+
+			<div class="flex theme-box">
+				<div class="relative top-[1.15rem]">
+					<span>THEME</span>
 				</div>
-				<div class="slidecontainer">
-					<input type="range" min="0" max="2" value="1" class="slider" id="myRange">
+				<div>
+					<div class="style-value">
+						<span>1</span>
+						<span>2</span>
+						<span>3</span>
+					</div>
+					<div class="slidecontainer">
+						<input type="range" min="1" max="3" value="0" class="slider" id="myRange">
+					</div>
 				</div>
 			</div>
 		</div>
 	
 		<div class="result-box">
-			<p class="result-paragraph text-[3.5rem] m-auto p-[0]">
-				&nbsp;
-			</p>
+			<p class="result-paragraph text-[3.5rem] m-auto p-[0]"></p>
 		</div>
 	
 		<div class="input-box">
 			<div class="keypad-grid">
 				<div class="button-box">
-					<button class="gen-button button" id="btnSeven" type="submit">7</button>
+					<button class="gen-button num-button button" id="btnSeven" type="submit">7</button>
 				</div>
 				<div class="button-box">
-					<button class="gen-button button" id="btnEight" type="submit">8</button>
+					<button class="gen-button num-button button" id="btnEight" type="submit">8</button>
 				</div>
 				<div class="button-box">
-					<button class="gen-button button" id="btnNine" type="submit">9</button>
+					<button class="gen-button num-button button" id="btnNine" type="submit">9</button>
 				</div>
 				<div class="button-box">
 					<button class="delete-button dark-button diff-button button" id="btnDel" type="submit">DEL</button>
 				</div>
 				<div class="button-box">
-					<button class="gen-button button" id="btnFour" type="submit">4</button>
+					<button class="gen-button button num-button"  id="btnFour" type="submit">4</button>
 				</div>
 				<div class="button-box">
-					<button class="gen-button button" id="btnFive" type="submit">5</button>
+					<button class="gen-button button num-button"  id="btnFive" type="submit">5</button>
 				</div>
 				<div class="button-box">
-					<button class="gen-button button" id="btnSix" type="submit">6</button>
+					<button class="gen-button button num-button"  id="btnSix" type="submit">6</button>
 				</div>
 				<div class="button-box">
-					<button class="gen-button button" id="btnPlus" type="submit">+</button>
+					<button class="gen-button button operation-button" id="btnPlus" type="submit">+</button>
 				</div>
 				<div class="button-box">
-					<button class="gen-button button" id="btnOne" type="submit">1</button>
+					<button class="gen-button button num-button" id="btnOne" type="submit">1</button>
 				</div>
 				<div class="button-box">
-					<button class="gen-button button" id="btnTwo" type="submit">2</button>
+					<button class="gen-button button num-button" id="btnTwo" type="submit">2</button>
 				</div>
 				<div class="button-box">
-					<button class="gen-button button" id="btnThree" type="submit">3</button>
+					<button class="gen-button button num-button" id="btnThree" type="submit">3</button>
 				</div>
 				<div class="button-box">
-					<button class="gen-button button" id="btnMinus" type="submit">-</button>
+					<button class="gen-button button operation-button" id="btnMinus" type="submit">-</button>
 				</div>
 				<div class="button-box">
 					<button class="gen-button button" id="btnDecimal" type="submit">.</button>
 				</div>
 				<div class="button-box">
-					<button class="gen-button button" id="btnZero" type="submit">0</button>
+					<button class="gen-button num-button button" id="btnZero" type="submit">0</button>
 				</div>
 				<div class="button-box">
-					<button class="gen-button button" id="btnDivide" type="submit">/</button>
+					<button class="gen-button button operation-button" id="btnDivide" type="submit">/</button>
 				</div>
 				<div class="button-box">
-					<button class="gen-button button" id="btnMultiply" type="submit">x</button>
+					<button class="gen-button button operation-button" id="btnMultiply" type="submit">x</button>
 				</div>
 				<div class="button-box">
 					<button class="reset-button dark-button diff-button button" id="btnReset" type="submit">RESET</button>
@@ -102,6 +106,7 @@
 		Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
 		Coded by <a href="#">Iyanda Israel</a>.
 	</div>
+	<script src="dist/scripts/style.js"></script>
 	<script src="dist/scripts/main.js"></script>
 </body>
 </html>
