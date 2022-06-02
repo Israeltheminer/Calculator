@@ -70,7 +70,6 @@ $(".operation-button").on("click", function(){
    let arrayValue = displayValue.split("")
    let filteredValue = arrayValue.filter(words => words != ",");
    let currentOperand = filteredValue.join("")
-   console.log(filteredValue)
    let currentOperation = this.innerText
    let previousOperation = localStorage.getItem("previousOperation")
    let previousOperand = localStorage.getItem("previousOperand")
@@ -98,6 +97,18 @@ $(".operation-button").on("click", function(){
       else if(previousOperation==="x"){
          result = previousNumber * currentNumber
          localStorage.setItem("previousOperand", result)
+      }
+   }
+   else if(currentOperand=="" && currentOperation!=""){
+      let previousOperand = localStorage.getItem("previousOperand")
+
+      if(currentOperation==="+" || currentOperation==="-"){
+         localStorage.setItem("previousOperand", "0")
+         localStorage.setItem("previousOperation", currentOperation)
+      }
+      else{
+         localStorage.setItem("previousOperand", "1")
+         localStorage.setItem("previousOperation", currentOperation)
       }
    }
    else{
@@ -134,3 +145,6 @@ $("#btnEqual").on("click", function(){
    }
    localStorage.clear();
 })
+window.onbeforeunload = function (e) {
+   localStorage.clear();
+};
