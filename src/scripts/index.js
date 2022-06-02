@@ -16,34 +16,18 @@ function displayResult(num){
    }
 }
 
-
-$(".num-button").on("click", function(){
+function pushValue(value){
    let previousStringNumber = $(".result-paragraph").text()
    let arrayValue = previousStringNumber.split("")
-   let newStringNumber = this.innerText
    
    if(arrayValue.length < 11 ){
-      arrayValue.push(newStringNumber)
+      arrayValue.push(value)
       let stringValue = arrayValue.join("")
       $(".result-paragraph").text(stringValue)
    }
-})
+}
 
-
-$(".delete-button").on("click", function(){
-   let number = $(".result-paragraph").text()
-   let arrayValue = number.split("")
-   arrayValue.pop()
-   let stringValue = arrayValue.join("")
-   $(".result-paragraph").text(stringValue)
-   
-   if(arrayValue[0] === undefined){
-      localStorage.clear()
-   }
-})
-
-
-$("#btnDecimal").on("click", function(){
+function pushDecimal(){
    let number = $(".result-paragraph").text()
    let arrayValue = number.split("")
    let pushDeterminant = arrayValue.includes(".")
@@ -56,21 +40,26 @@ $("#btnDecimal").on("click", function(){
       let stringValue = arrayValue.join("")
       $(".result-paragraph").text(stringValue)
    }
-})
+}
 
+function popValue(){
+   let number = $(".result-paragraph").text()
+   let arrayValue = number.split("")
+   arrayValue.pop()
+   let stringValue = arrayValue.join("")
+   $(".result-paragraph").text(stringValue)
+   
+   if(arrayValue[0] === undefined){
+      localStorage.clear()
+   }
+}
 
-$(".reset-button").on("click", function(){
-   $(".result-paragraph").text('')
-   localStorage.clear();
-})
-
-
-$(".operation-button").on("click", function(){
+function addOperation(operation){
+   let currentOperation = operation
    let displayValue = $(".result-paragraph").text();
    let arrayValue = displayValue.split("")
    let filteredValue = arrayValue.filter(words => words != ",");
    let currentOperand = filteredValue.join("")
-   let currentOperation = this.innerText
    let previousOperation = localStorage.getItem("previousOperation")
    let previousOperand = localStorage.getItem("previousOperand")
 
@@ -116,10 +105,9 @@ $(".operation-button").on("click", function(){
       localStorage.setItem("previousOperation", currentOperation)
    }
    $(".result-paragraph").text('')
-})
+}
 
-
-$("#btnEqual").on("click", function(){
+function getAnswer(){
    let currentOperand = $(".result-paragraph").text()
    let operation = localStorage.getItem("previousOperation")
    let previousOperand = localStorage.getItem("previousOperand")
@@ -144,7 +132,95 @@ $("#btnEqual").on("click", function(){
       displayResult(result)
    }
    localStorage.clear();
+}
+
+
+// Display value of numbered button on button click
+$(".num-button").on("click", function(){
+   let newStringNumber = this.innerText
+   pushValue(newStringNumber)
 })
+
+// Display value of numbered key on keyboard click
+$("body").on("keyup", function(e){
+   let value = e.key
+
+   if(!isNaN(value)){
+      pushValue(value)
+   }
+})
+
+
+// Delete value from display on button click
+$(".delete-button").on("click", function(){
+   popValue()
+})
+
+// Delete value from display on backspace keyup
+$("body").on("keyup", function(e){
+   let value = e.key
+
+   if(value==="Backspace"){
+      popValue()
+   }
+})
+
+
+// Add decimal to display on button click
+$("#btnDecimal").on("click", function(){
+   pushDecimal()
+})
+
+// Add decimal to display on "." keyup
+$("body").on("keyup", function(e){
+   let value = e.key
+
+   if(value==="."){
+      pushDecimal()
+   }
+})
+
+
+// Reset display and clear local storage values
+$(".reset-button").on("click", function(){
+   $(".result-paragraph").text('')
+   localStorage.clear();
+})
+
+
+// Add operation on opertion button click
+$(".operation-button").on("click", function(){
+   let currentOperation = this.innerText
+   addOperation(currentOperation)
+})
+
+
+// Add operation on operational key keyup
+$("body").on("keyup", function(e){
+   let value = e.key
+
+   if(value==="+" || value==="-" || value==="/" || value==="*"){
+      addOperation(value)
+   }
+})
+
+
+// Get answer on equal button click
+$("#btnEqual").on("click", function(){
+   getAnswer()   
+})
+
+// Get answer on enter key keyup
+$("body").on("keyup", function(e){
+   let value = e.key
+   
+   if(value==="=" || value==="Enter"){
+      getAnswer()
+   }
+})
+
+
+// Clears local storage on window refresh
 window.onbeforeunload = function (e) {
    localStorage.clear();
 };
