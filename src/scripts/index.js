@@ -1,15 +1,32 @@
 const $ = require('jquery');
 
+function displayResult(num){
+   let stringValue =`${num}`
+   let arrayValue = stringValue.split("")
+   
+   if(arrayValue.length >= 12){
+      let parsedNum = parseFloat(num)
+      let result = parsedNum.toExponential(6)
+      $(".result-paragraph").text(`${result}`)
+   }
+   else{
+      let parsedNum = parseFloat(num)
+      let displayResult = parsedNum.toLocaleString()
+      $(".result-paragraph").text(displayResult)
+   }
+}
+
 
 $(".num-button").on("click", function(){
-   let number = $(".result-paragraph").text()
+   let previousStringNumber = $(".result-paragraph").text()
+   let arrayValue = previousStringNumber.split("")
+   let newStringNumber = this.innerText
    
-   let arrayValue = number.split("")
-   let newNumber = this.innerText
-   arrayValue.push(newNumber)
-   let stringValue = arrayValue.join("")
-   
-   $(".result-paragraph").text(stringValue)
+   if(arrayValue.length < 12 ){
+      arrayValue.push(newStringNumber)
+      let stringValue = arrayValue.join("")
+      $(".result-paragraph").text(stringValue)
+   }
 })
 
 
@@ -49,7 +66,11 @@ $(".reset-button").on("click", function(){
 
 
 $(".operation-button").on("click", function(){
-   let currentOperand = $(".result-paragraph").text()
+   let displayValue = $(".result-paragraph").text();
+   let arrayValue = displayValue.split("")
+   let filteredValue = arrayValue.filter(words => words != ",");
+   let currentOperand = filteredValue.join("")
+   console.log(filteredValue)
    let currentOperation = this.innerText
    let previousOperation = localStorage.getItem("previousOperation")
    let previousOperand = localStorage.getItem("previousOperand")
@@ -97,19 +118,19 @@ $("#btnEqual").on("click", function(){
 
    if(operation==="+"){
       result = previousNumber + currentNumber
-      $(".result-paragraph").text(`${result}`)
+      displayResult(result)
    }
    else if(operation==="-"){
       result = previousNumber - currentNumber
-      $(".result-paragraph").text(`${result}`)
+      displayResult(result)
    }
    else if(operation==="/"){
       result = previousNumber / currentNumber
-      $(".result-paragraph").text(`${result}`)
+      displayResult(result)
    }
    else if(operation==="x"){
       result = previousNumber * currentNumber
-      $(".result-paragraph").text(`${result}`)
+      displayResult(result)
    }
    localStorage.clear();
 })
