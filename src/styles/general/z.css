@@ -1,3 +1,9 @@
+@custom-media --bp-lg-mobile (width <= 585px);
+@custom-media --bp-mobile (width <= 490px);
+@custom-media --bp-md-mobile (width <= 415px);
+@custom-media --bp-sm-mobile (width <= 350px);
+
+
 body{
 	padding: 5rem 5rem 2rem;
 	font-family: 'League Spartan', sans-serif;
@@ -15,7 +21,7 @@ body{
 }
 
 .theme-box{
-	align-items: center;
+	align-items: baseline;
 	gap: 1rem;
 }
 
@@ -99,4 +105,62 @@ body{
 	margin: 2rem auto 0;
 	font-size: 11px; 
 	text-align: center;
+}
+
+
+@media (--bp-lg-mobile){
+
+	.result-box{
+		padding: 1.25rem 1.5rem;
+		height: 100px;
+	}	
+}
+
+
+@media (--bp-mobile){
+
+	body{
+		padding: 4rem 3rem 2rem;
+	}	
+}
+
+
+@media (--bp-md-mobile){
+	body{
+		padding: 3rem 2rem 2rem;
+	}
+		
+	.theme-box{
+		gap: 0.75rem;
+	}
+
+	.slider {
+		padding: 4px;
+		width: 60px;
+	}
+	 
+	.slider::-webkit-slider-thumb {
+		width: 12px;
+		height: 12px;
+	}
+	 
+	.slider::-moz-range-thumb {
+		width: 12px;
+		height: 12px;
+	}
+	
+	.result-box{
+		margin-top: 1.25rem;
+		margin-bottom: 1.25rem;
+		padding: 1rem;
+		height: 80px;
+	}
+	
+	.input-box{
+		padding: 1rem;
+	}
+	
+	.keypad-grid{
+		gap: 1.5rem 1rem;
+	}
 }

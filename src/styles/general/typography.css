@@ -1,5 +1,11 @@
+@custom-media --bp-lg-mobile (width <= 585px);
+@custom-media --bp-mobile (width <= 490px);
+@custom-media --bp-md-mobile (width <= 415px);
+@custom-media --bp-sm-mobile (width <= 350px);
+
+
 h1{
-   font-size: 32px;
+   font-size: 36px;
    font-weight: 600;
 }
 
@@ -14,6 +20,7 @@ p{
 .gen-button{
    font-size:  32px;
    width: 100%;
+   font-weight: 600;
 }
 
 button{
@@ -23,4 +30,65 @@ button{
 .diff-button{
    font-size:  20px;
    width: 100%;
+}
+
+.result-paragraph{
+	font-size: 56px;
+}
+
+
+@media (--bp-lg-mobile){
+   
+   .gen-button{
+      font-size:  28px;
+   }
+   
+   button{
+      height: 45px;
+   }
+   
+   .diff-button{
+      font-size:  18px;
+   }
+   
+   .result-paragraph{
+	   font-size: 46px;
+   }
+}
+
+
+@media (--bp-mobile){
+
+   .gen-button{
+      font-size:  28px;
+   }
+}
+
+@media (--bp-md-mobile){
+   span{
+      font-size: 12px;
+   }
+   
+   p{
+      font-size: 12px;
+   }
+   
+   button{
+      height: 42px;
+   }
+   
+   .result-paragraph{
+	   font-size: 42px;
+   }
+}
+
+@media (--bp-sm-mobile){
+
+   button{
+      height: 40px;
+   }
+   
+   .result-paragraph{
+	   font-size: 36px;
+   }
 }
