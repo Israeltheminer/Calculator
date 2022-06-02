@@ -14,6 +14,11 @@ body{
 	align-items: center;
 }
 
+.theme-box{
+	align-items: center;
+	gap: 1rem;
+}
+
 .style-value{
 	padding: 5px;
 	display: flex;
@@ -55,11 +60,16 @@ body{
 	border-radius: 15px;
 	text-align: right;
 	padding: 1.5rem;
+	height: 130px;
 }
 
 .input-box{
 	padding: 1.5rem;
 	border-radius: 15px;
+}
+
+.hide-shadow{
+	box-shadow: none;
 }
 
 .keypad-grid{
