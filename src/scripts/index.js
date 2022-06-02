@@ -1,18 +1,30 @@
 const $ = require('jquery');
 
-function displayResult(num){
+function displayResult(num, previousValue){
+   
    let stringValue =`${num}`
    let arrayValue = stringValue.split("")
-   
-   if(arrayValue.length >= 11){
-      let parsedNum = parseFloat(num)
-      let result = parsedNum.toExponential(6)
-      $(".result-paragraph").text(`${result}`)
+
+   function pasteResult(value){
+      var parsedNum = parseFloat(value)
+      let stringValue =`${parsedNum}`
+      let arrayValue = stringValue.split("")
+      
+      if(arrayValue.length >= 11){
+         let result = parsedNum.toExponential(6)
+         $(".result-paragraph").text(`${result}`)
+      }
+      else{
+         let displayResult = parsedNum.toLocaleString()
+         $(".result-paragraph").text(displayResult)
+      }
+   }
+
+   if(isNaN(num)){
+      pasteResult(previousValue)
    }
    else{
-      let parsedNum = parseFloat(num)
-      let displayResult = parsedNum.toLocaleString()
-      $(".result-paragraph").text(displayResult)
+      pasteResult(num)
    }
 }
 
@@ -88,9 +100,8 @@ function addOperation(operation){
          localStorage.setItem("previousOperand", result)
       }
    }
-   else if(currentOperand=="" && currentOperation!=""){
-      let previousOperand = localStorage.getItem("previousOperand")
-
+   else if(currentOperand=="" && previousOperand===null && previousOperation===null){
+      
       if(currentOperation==="+" || currentOperation==="-"){
          localStorage.setItem("previousOperand", "0")
          localStorage.setItem("previousOperation", currentOperation)
@@ -99,6 +110,9 @@ function addOperation(operation){
          localStorage.setItem("previousOperand", "1")
          localStorage.setItem("previousOperation", currentOperation)
       }
+   }
+   else if(arrayValue[0]===undefined && currentOperation!="" && previousOperand!=undefined){
+      localStorage.setItem("previousOperation", currentOperation)
    }
    else{
       localStorage.setItem("previousOperand", currentOperand)
@@ -117,19 +131,19 @@ function getAnswer(){
 
    if(operation==="+"){
       result = previousNumber + currentNumber
-      displayResult(result)
+      displayResult(result, previousOperand)
    }
    else if(operation==="-"){
       result = previousNumber - currentNumber
-      displayResult(result)
+      displayResult(result, previousOperand)
    }
    else if(operation==="/"){
       result = previousNumber / currentNumber
-      displayResult(result)
+      displayResult(result, previousOperand)
    }
    else if(operation==="x"){
       result = previousNumber * currentNumber
-      displayResult(result)
+      displayResult(result, previousOperand)
    }
    localStorage.clear();
 }
