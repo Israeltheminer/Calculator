@@ -4,7 +4,7 @@ function displayResult(num){
    let stringValue =`${num}`
    let arrayValue = stringValue.split("")
    
-   if(arrayValue.length >= 12){
+   if(arrayValue.length >= 11){
       let parsedNum = parseFloat(num)
       let result = parsedNum.toExponential(6)
       $(".result-paragraph").text(`${result}`)
@@ -22,7 +22,7 @@ $(".num-button").on("click", function(){
    let arrayValue = previousStringNumber.split("")
    let newStringNumber = this.innerText
    
-   if(arrayValue.length < 12 ){
+   if(arrayValue.length < 11 ){
       arrayValue.push(newStringNumber)
       let stringValue = arrayValue.join("")
       $(".result-paragraph").text(stringValue)
