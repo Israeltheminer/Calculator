@@ -25,7 +25,7 @@ body{
 
 .gen-button{
 	background-color: hsl(45, 7%, 89%);
-	box-shadow: 0 3px hsl(35, 11%, 61%);
+	box-shadow: 0 4px hsl(35, 11%, 61%);
 }
 
 .diff{
@@ -34,10 +34,10 @@ body{
 
 .dark-button{
 	background-color: hsl(185, 42%, 37%);
-	box-shadow: 0 3px hsl(185, 58%, 25%);
+	box-shadow: 0 4px hsl(185, 58%, 25%);
 }
 
 .equal-button{
 	background-color: hsl(25, 98%, 40%);
-	box-shadow: 0 3px hsl(25, 99%, 27%);
+	box-shadow: 0 4px hsl(25, 99%, 27%);
 }

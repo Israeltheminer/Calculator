@@ -25,16 +25,16 @@ body{
 
 .gen-button{
 	background-color: hsl(268, 47%, 21%);
-	box-shadow: 0 3px hsl(285, 91%, 52%);
+	box-shadow: 0 4px hsl(285, 91%, 52%);
 }
 
 .dark-button{
 	background-color: hsl(281, 89%, 26%);
-	box-shadow: 0 3px hsl(285, 91%, 52%);
+	box-shadow: 0 4px hsl(285, 91%, 52%);
 }
 
 .equal-button{
 	background-color: hsl(176, 100%, 44%);
-	box-shadow: 0 3px hsl(177, 92%, 70%);
+	box-shadow: 0 4px hsl(177, 92%, 70%);
    color: rgba(0, 0, 0, 0.806);
 }

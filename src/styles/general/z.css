@@ -90,6 +90,11 @@ body{
 	border-radius: 5px;
 }
 
+.operation-button:focus{
+	color: #ffffff;
+	box-shadow: none;
+}
+
 .attribution {
 	margin: 2rem auto 0;
 	font-size: 11px; 
