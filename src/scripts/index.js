@@ -1,41 +1,75 @@
 const $ = require('jquery');
 
-function displayResult(num, previousValue){
-   
-   let stringValue =`${num}`
+
+// Function to either display either the exponential or the local string of the argument
+function displayResult(value){
+   var floatValue = parseFloat(value)
+   let stringValue =`${floatValue}`
    let arrayValue = stringValue.split("")
-
-   function pasteResult(value){
-      var parsedNum = parseFloat(value)
-      let stringValue =`${parsedNum}`
-      let arrayValue = stringValue.split("")
-      
-      if(arrayValue.length >= 11){
-         let result = parsedNum.toExponential(6)
-         $(".result-paragraph").text(`${result}`)
-      }
-      else{
-         let displayResult = parsedNum.toLocaleString()
-         $(".result-paragraph").text(displayResult)
-      }
-   }
-
-   if(isNaN(num)){
-      pasteResult(previousValue)
+   
+   if(arrayValue.length >= 11){
+      let exponentialResult = floatValue.toExponential(6)
+      $(".result-paragraph").text(`${exponentialResult}`)
    }
    else{
-      pasteResult(num)
+      let localeResult = floatValue.toLocaleString()
+      if(localeResult==="NaN"){
+         $(".result-paragraph").text(``)
+      }
+      else{
+         $(".result-paragraph").text(`${localeResult}`)
+      }
    }
 }
+
+
+// Function to either display either the exponential or the local string of the argument
+function displayResultAfterDecimal(value){
+   var floatValue = parseFloat(value)
+   var intergerValue = parseInt(value)
+   let arrayValue = value.split("")
+   let decimalArray = value.split(".")
+   var decimal =  decimalArray[1]
+   console.log(decimal)
+
+   if(arrayValue.length >= 11){
+      let exponentialResult = floatValue.toExponential(6)
+      $(".result-paragraph").text(`${exponentialResult}`)
+   }
+   else{
+      let localeResult = intergerValue.toLocaleString()
+      $(".result-paragraph").text(`${localeResult}.${decimal}`)
+   }
+}
+
+
+// Function to fetch a result when the answer the equal function is called
+function fetchResult(num, previousValue){
+
+   if(isNaN(num)){
+      displayResult(previousValue)
+   }
+   else{
+      displayResult(num)
+   }
+}
+
 
 function pushValue(value){
    let previousStringNumber = $(".result-paragraph").text()
    let arrayValue = previousStringNumber.split("")
+   arrayValue.push(value)
+   let filteredValue = arrayValue.filter(items => items != ",");
+   let stringValue = filteredValue.join("")
+   let isDecimal = arrayValue.includes(".")
    
-   if(arrayValue.length < 11 ){
-      arrayValue.push(value)
-      let stringValue = arrayValue.join("")
-      $(".result-paragraph").text(stringValue)
+   if(filteredValue.length <= 11){
+      if(isDecimal){
+         displayResultAfterDecimal(stringValue)
+      }
+      else{
+         displayResult(stringValue)
+      }
    }
 }
 
@@ -57,10 +91,12 @@ function pushDecimal(){
 function popValue(){
    let number = $(".result-paragraph").text()
    let arrayValue = number.split("")
-   arrayValue.pop()
-   let stringValue = arrayValue.join("")
-   $(".result-paragraph").text(stringValue)
-   
+   let filteredValue = arrayValue.filter(items => items != ",");
+   filteredValue.pop()
+   let stringValue = filteredValue.join("")
+
+   displayResult(stringValue)
+
    if(arrayValue[0] === undefined){
       localStorage.clear()
    }
@@ -131,19 +167,19 @@ function getAnswer(){
 
    if(operation==="+"){
       result = previousNumber + currentNumber
-      displayResult(result, previousOperand)
+      fetchResult(result, previousOperand)
    }
    else if(operation==="-"){
       result = previousNumber - currentNumber
-      displayResult(result, previousOperand)
+      fetchResult(result, previousOperand)
    }
    else if(operation==="/"){
       result = previousNumber / currentNumber
-      displayResult(result, previousOperand)
+      fetchResult(result, previousOperand)
    }
    else if(operation==="x"){
       result = previousNumber * currentNumber
-      displayResult(result, previousOperand)
+      fetchResult(result, previousOperand)
    }
    localStorage.clear();
 }
