@@ -158,9 +158,12 @@ function addOperation(operation){
 }
 
 function getAnswer(){
-   let currentOperand = $(".result-paragraph").text()
+   let displayValue = $(".result-paragraph").text()
    let operation = localStorage.getItem("previousOperation")
    let previousOperand = localStorage.getItem("previousOperand")
+   let arrayValue = displayValue.split("")
+   let filteredValue = arrayValue.filter(words => words != ",");
+   let currentOperand = filteredValue.join("")
    let currentNumber = parseFloat(currentOperand)
    let previousNumber = parseFloat(previousOperand)
    let result ;
@@ -249,7 +252,7 @@ $(".operation-button").on("click", function(){
 $("body").on("keyup", function(e){
    let value = e.key
 
-   if(value==="+" || value==="-" || value==="/" || value==="*"){
+   if(value==="+" || value=== "-" || value=== "/" || value=== "*"){
       addOperation(value)
    }
 })
@@ -264,7 +267,8 @@ $("#btnEqual").on("click", function(){
 $("body").on("keyup", function(e){
    let value = e.key
    
-   if(value==="=" || value==="Enter"){
+   if(value==="=" || value=== "Enter"){
+      console.log()
       getAnswer()
    }
 })
