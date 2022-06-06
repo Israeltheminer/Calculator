@@ -3,7 +3,7 @@ const $ = require('jquery');
 
 // Function to either display either the exponential or the local string of the argument
 function displayResult(value){
-   var floatValue = parseFloat(value)
+   let floatValue = parseFloat(value)
    let stringValue =`${floatValue}`
    let arrayValue = stringValue.split("")
    
@@ -25,12 +25,11 @@ function displayResult(value){
 
 // Function to either display either the exponential or the local string of the argument
 function displayResultAfterDecimal(value){
-   var floatValue = parseFloat(value)
-   var intergerValue = parseInt(value)
+   let floatValue = parseFloat(value)
+   let intergerValue = parseInt(value)
    let arrayValue = value.split("")
    let decimalArray = value.split(".")
-   var decimal =  decimalArray[1]
-   console.log(decimal)
+   let decimal =  decimalArray[1]
 
    if(arrayValue.length >= 11){
       let exponentialResult = floatValue.toExponential(6)
@@ -268,7 +267,6 @@ $("body").on("keyup", function(e){
    let value = e.key
    
    if(value==="=" || value=== "Enter"){
-      console.log()
       getAnswer()
    }
 })
